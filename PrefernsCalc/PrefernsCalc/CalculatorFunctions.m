@@ -7,11 +7,12 @@
 //
 
 #import "CalculatorFunctions.h"
-@interface CalculatorFunctions ()
+@interface CalculatorFunctions()
 
 @property (nonatomic) double operandF1;
 @property (nonatomic) double operandF2;
 @property (nonatomic, strong) NSString * operation;
+
 @end
 
 @implementation CalculatorFunctions
@@ -26,7 +27,6 @@
 
 - (double)functionsOperation {
     double result;
-  
     if ([operation isEqualToString:@"+"]) {
         result = self.operandF1 + self.operandF2;
     }
@@ -45,11 +45,11 @@
     return result;
 }
 
-- (void) setOperand1:(double)operand1{
+- (void) setOperand1:(double)operand1 {
     self.operandF1 = operand1;
 }
 
-- (void) setOperand2:(double)operand2{
+- (void) setOperand2:(double)operand2 {
     self.operandF2 = operand2;
 }
 

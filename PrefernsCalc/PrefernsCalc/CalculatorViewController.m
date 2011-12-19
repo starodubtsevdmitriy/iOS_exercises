@@ -15,6 +15,7 @@
 @property (nonatomic) BOOL inMiddleOfEnterNumbes;
 @property (nonatomic) BOOL currentOperationExist;
 @property (nonatomic) BOOL dotAlredyPressed;
+
 @end
 
 @implementation CalculatorViewController
@@ -35,7 +36,9 @@
 }
 
 - (CalculatorFunctions *)functions {
-    if (!_functions)_functions = [[CalculatorFunctions alloc] init];
+    if (!_functions) {
+     _functions = [[CalculatorFunctions alloc] init];   
+    }
     return _functions;
 }
 
