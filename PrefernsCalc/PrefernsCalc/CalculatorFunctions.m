@@ -27,19 +27,22 @@
 
 - (double)functionsOperation {
     double result;
-    if ([operation isEqualToString:@"+"]) {
+    if ([operation isEqualToString:@"sqrt"]) {
+        result = sqrt(self.operandF1);
+    }
+    else if ([operation isEqualToString:@"+"]) {
         result = self.operandF1 + self.operandF2;
     }
-    if ([operation isEqualToString:@"-"]) {
+    else if ([operation isEqualToString:@"-"]) {
         result = self.operandF1 - self.operandF2;
     }
-    if ([operation isEqualToString:@"X"]) {
+    else if ([operation isEqualToString:@"X"]) {
         result = self.operandF1 * self.operandF2;
     }
-    if ([operation isEqualToString:@"/"]) {
+    else if ([operation isEqualToString:@"/"]) {
         result = self.operandF1 / self.operandF2;
     }
-    if ([operation isEqualToString:@"="]) {
+    else if ([operation isEqualToString:@"="]) {
         return result;
     }
     return result;

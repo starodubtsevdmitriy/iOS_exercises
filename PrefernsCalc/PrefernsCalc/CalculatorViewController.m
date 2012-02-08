@@ -69,11 +69,19 @@
 - (IBAction)buttonOperationPressed:(UIButton *)sender {
     [self checkDotAlredyPressed];
     NSString * operation = sender.currentTitle;
-    if (self.currentOperationExist == NO && [operation isEqualToString:@"="] != YES) {
+    if (self.currentOperationExist == NO && [operation isEqualToString:@"sqrt"] == YES) {
+        [self.functions setOperand1:self.calculatorDisplay.text.doubleValue];
+        [self.functions setOperand2:0];
+        [self.functions setCurrentOperation:operation];
+        double result = [self.functions functionsOperation];
+        self.calculatorDisplay.text = [NSString stringWithFormat:@"%g", result];
+        [self.functions setOperand1: self.calculatorDisplay.text.doubleValue];
+        self.currentOperationExist = NO;
+    }
+    else if (self.currentOperationExist == NO && [operation isEqualToString:@"="] != YES && [operation isEqualToString:@"sqrt"] != YES) {
         [self.functions setOperand1:self.calculatorDisplay.text.doubleValue];
         self.currentOperationExist = YES;
         [self.functions setCurrentOperation:operation];
-
     }
     else if (self.currentOperationExist == YES) {
         if ([operation isEqualToString:@"="] == YES) {
